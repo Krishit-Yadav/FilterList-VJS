@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title> My Contacts </title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center-align"> My Contacts </h1>
+      <input type="text" id="filterInput" placeholder="Search NAMES.....">
+      <ul id="names" class="collection with-header">
+        <li class="collection-header">
+          <h5>A</h5>
+        </li>
+        <li class="collection-item">
+            <a href="#">Ankit Dwivedi</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Anand Raj</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Abhishek Agrawal</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Anamika Shrivastav</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Amit Yadav</a>
+        </li>
+        <li class="collection-header">
+          <h5>B</h5>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bikas Dwivedi</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Badrinath Rai</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bhisma Agrawal</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bikram Shrivastav</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bankey Yadav</a>
+        </li>
+        <li class="collection-header">
+          <h5>C</h5>
+        </li>
+        <li class="collection-item">
+            <a href="#">Chandan Dwivedi</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Chirag Raj</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Chelsy Agrawal</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Chintu Shrivastav</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Chakradhar Yadav</a>
+        </li>
+        <li class="collection-header">
+          <h5>D</h5>
+        </li>
+        <li class="collection-item">
+            <a href="#">Devesh Dwivedi</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Dhyanchand Raj</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Druv Agrawal</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Diksha Shrivastav</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Digambar Yadav</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <script>
+
+      let filterInput = document.getElementById('filterInput');
+      filterInput.addEventListener('keyup', filterNames);
+
+      function filterNames(){
+        let filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+        let ul = document.getElementById('names');
+        let li = ul.querySelectorAll('li.collection-item');
+
+        for(let i = 0; i < li.length; i++){
+          let a = li[i].getElementsByTagName('a')[0];
+            if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+              li[i].style.display = '';
+            }
+            else {
+              li[i].style.display = 'none';
+            }
+        }
+
+      }
+    </script>
+  </body>
+</html>
